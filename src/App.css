@@ -1,38 +1,121 @@
+
+@import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
+
+.body {
+  height: 100%;
+  width: 100%;
+  background-color: silver;
+}
 .App {
+  font-family: "Nunito", sans-serif;
   text-align: center;
+  margin: -.5rem;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.Card--link {
+  text-decoration: none;
+  background: #00ace0;
+  color: #fff;
+  padding: 0.45rem 0.7rem;
+  border-radius: 20px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+h2,
+p {
+  align-content: left;
+}
+h1 {
+  font-size: 2rem;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+.Grid {
+  margin-top: 2rem;
+  margin-left: 1rem;
+  margin-right: 1rem;;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  border-radius: 0.5rem;
+  background-color: #1A2026;
+  grid-gap: 1rem;
+}
+
+.Grid--content {
+  text-align: left;
+  margin-left: 8px;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  padding-left: 1rem;
+  text-transform: capitalize;
+  font-size: 1.1rem;
+  color: whitesmoke;
+}
+
+.Avatar-container {
+  flex: 2 1 0%;
+  width: 100%;
+  height: 100%;
+}
+.Avatar {
+  vertical-align: middle;
+  width: 100%;
+  height: 100%;
+  object-position: center center;
+  object-fit: cover;
+  border-top-left-radius: 0.5rem;
+  border-bottom-left-radius: 0.5rem;
+}
+
+.Hero-image {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("https://cdnb.artstation.com/p/assets/images/images/013/464/345/large/aodhan-mc-nicholl-rick-morty-style-background-001-copy.jpg?1539713189");
+  height: calc(50vh - 30px);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.Header {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.Container {
+  background-color: silver;
+  display: grid;
+  grid-gap: .5rem;
+  grid-template-columns: repeat(2, 3fr);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.btn {
+  background-color: #fff;
+  border-radius: .5rem;
+  border: solid 1px black;
+  color: black;
+  padding: 8px 26px;
+  text-align: center;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  height: 3rem;
+}
+
+.description {
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+
+.Header-cont {
+  justify-content: center;
+  width: 42rem;
+  padding-top: 3rem;
+  padding-bottom: 2rem;
+  height: 3rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
