@@ -8,7 +8,7 @@ export default function App() {
   return (
     <main className="text-center -m-2">
     <section className="Hero-image bg-center bg-no-repeat bg-cover relative">
-        <div className="w-46 text-center absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white">
+        <div className="w-146 text-center absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white">
           <h1 className="text-5xl mb-8">Rick | Morty</h1>
           <div className="flex flex-col items-center justify-center w-full md:flex-row md:items-baseline">
           {pageCount > 1 ? 
