@@ -5,13 +5,12 @@ import "./App.css";
 
 export default function App() {
   const [pageCount, setPageCount] = useState(1);
-
   return (
-    <main className={`text-center -m-2`}>
-    <section className="Hero-image">
-        <div className="Header">
-          <h1 className="text-5xl mb-4">Rick | Morty</h1>
-          <div className="flex flex-col cont items-center content-center w-full pt-12 pb-8 max-h-12 md:flex-row">
+    <main className="text-center -m-2">
+    <section className="Hero-image bg-center bg-no-repeat bg-cover relative">
+        <div className="w-46 text-center absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white">
+          <h1 className="text-5xl mb-8">Rick | Morty</h1>
+          <div className="flex flex-col items-center justify-center w-full md:flex-row md:items-baseline">
           {pageCount > 1 ? 
            (
                <button className="font-mono mb-4 text-base h-12 py-0 px-6 text-center mx-4 text-black bg-white rounded-lg border border-white border-solid md:mb-0" 

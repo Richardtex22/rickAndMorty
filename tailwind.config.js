@@ -20,7 +20,28 @@ module.exports = {
       '2xl': '1536px',
       // => @media (min-width: 1536px) { ... }
     },
-    extend: {},
+    extend: {
+      width: {
+        146: '46rem',
+        150: '50rem',
+      },
+      height: {
+        100: '25rem',
+        104: '26rem',
+        108: '27rem',
+        112: '28rem',
+        116: '29rem',
+        120: '30rem',
+        142: '42rem',
+        146: '46rem',
+        150: '50rem',
+      }, 
+      gridAutoRows: {
+        '2fr': 'minmax(0, 2fr)',
+        '3fr': 'minmax(0, 3fr)',
+      }
+    },
+    
   },
   variants: {
     extend: {},
