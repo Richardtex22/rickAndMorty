@@ -44,7 +44,7 @@ h1 {
 .Hero-image {
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
     url("https://cdnb.artstation.com/p/assets/images/images/013/464/345/large/aodhan-mc-nicholl-rick-morty-style-background-001-copy.jpg?1539713189");
-  height: calc(50vh - 30px);
+  height: calc(70vh - 50px);
 }
 
 .Container {
