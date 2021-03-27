@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import ApolloClient from "apollo-boost";
-import { ApolloProvider } from "@apollo/react-hooks";
+import { ApolloProvider } from "@apollo/client";
 import "./index.css";
 import App from "./App";
 
