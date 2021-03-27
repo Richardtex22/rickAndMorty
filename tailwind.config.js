@@ -22,8 +22,11 @@ module.exports = {
     },
     extend: {
       width: {
+        122: '30rem',
         146: '46rem',
         150: '50rem',
+        158: '52rem',
+        170: '55rem',
       },
       height: {
         100: '25rem',
@@ -39,7 +42,11 @@ module.exports = {
       gridAutoRows: {
         '2fr': 'minmax(0, 2fr)',
         '3fr': 'minmax(0, 3fr)',
-      }
+      },
+      backgroundColor: theme => ({
+        ...theme('colors'),
+        'darkGray': '#172B3A',
+       })
     },
     
   },

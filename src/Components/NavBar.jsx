@@ -32,7 +32,7 @@ const NavBar = () => {
 
           <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
             <div className="flex-shrink-0 flex items-center">
-              <img className="block lg:hidden h-8 w-auto" src="https://png.pngitem.com/pimgs/s/515-5152607_freetoedit-cute-rick-morty-rickandmorty-wallpaper-black-and.png" alt="Workflow" />
+              <img className="block lg:hidden h-8 w-auto rounded-3xl" src="https://png.pngitem.com/pimgs/s/515-5152607_freetoedit-cute-rick-morty-rickandmorty-wallpaper-black-and.png" alt="Workflow" />
               <img className="hidden lg:block h-8 w-auto rounded-3xl" src="https://png.pngitem.com/pimgs/s/515-5152607_freetoedit-cute-rick-morty-rickandmorty-wallpaper-black-and.png" alt="Workflow" />
               <span className="hidden lg:block ml-4 text-white font-semibold text-xl tracking-tight">Rick and Morty</span>
             </div>
