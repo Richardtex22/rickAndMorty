@@ -18,10 +18,8 @@ const Characters = () => {
     }
     if (loading) return <Loading />;
   const { results } = data.characters || [];
-    console.log(results);
 
     const getStatus = (status) => {
-      console.log(status);
       let color = "bg-green-400";
       if(status === "Dead") {
         color = "bg-red-700";
@@ -29,7 +27,6 @@ const Characters = () => {
       if(status === "unknown"){
         color = "bg-gray-400";
       }
-      console.log(color);
       return color;
     };
 
@@ -54,7 +51,7 @@ const Characters = () => {
           </div>
         </div>
       </section>
-    <section className="bg-white w-screen m-16 justify-items-start gap-8 md:grid-cols-2 md:grid md:gap-6 ">
+    <section className="bg-white w-screen p-16 justify-items-start gap-8 md:grid-cols-2 md:grid md:gap-6 ">
       {results.map((char) => {
         return (
           <Link to={`/character/${char.id}`}> 
