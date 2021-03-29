@@ -24,7 +24,7 @@ const Chars = ({ match }) => {
     return (
         <section className="bg-fixed h-screen w-full bg-darkGray relative">
             <div className="w-full bg-center h-screen absolute  text-white left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                <div className="flex m-4">
+                <div className="flex m-8 sm:m-4">
                     <Link to="/Characters">
                         <button className="flex justify-around">
                     <svg className="h-6 w-6 text-white mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
