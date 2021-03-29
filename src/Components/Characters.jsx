@@ -1,6 +1,6 @@
-import React, {useEffect, useState} from "react";
+import React, {useState} from "react";
 import charsQuery from "../Helpers/charsQuery";
-import { useLazyQuery, useQuery } from "@apollo/client";
+import { useQuery } from "@apollo/client";
 import {Link} from 'react-router-dom';
 import Loading from "./Loading";
 

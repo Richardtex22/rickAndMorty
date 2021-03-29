@@ -1,14 +1,16 @@
-import React from 'react';
+import React,  { useEffect } from 'react';
 import { useQuery } from "@apollo/client";
 import Loading from "./Loading";
 import charById from "../Helpers/charById";
 import { Link } from 'react-router-dom';
-
-import bg from '../Assets/background.jpg';
 import CardDetails from './CardDetails';
 
 const Chars = ({ match }) => {
     const id = match.params.id;
+
+    useEffect(() =>{
+        window.scrollTo(0,0);
+    }, []);
 
     const { loading, error, data } = useQuery(charById, {
         variables: { id }
