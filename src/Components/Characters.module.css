@@ -1,0 +1,11 @@
+.Avatar-container {
+  overflow: hidden;
+}
+.Avatar-container:hover .Avatar {
+  -webkit-transform:scale(1.3);
+  transform:scale(1.3);
+}
+
+.Avatar {
+margin-right: 1rem;
+}

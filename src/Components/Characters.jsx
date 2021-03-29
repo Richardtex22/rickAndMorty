@@ -4,7 +4,7 @@ import { useLazyQuery, useQuery } from "@apollo/client";
 import {Link} from 'react-router-dom';
 import Loading from "./Loading";
 
-import "./Characters.module.css";
+
 
 const Characters = () => {
   const [page, setPage] = useState(1);
@@ -51,27 +51,26 @@ const Characters = () => {
           </div>
         </div>
       </section>
-    <section className="bg-white w-screen p-16 justify-items-start gap-8 md:grid-cols-2 md:grid md:gap-6 ">
+    <section className="bg-white w-screen p-2 sm:p-16 justify-items-start gap-8 md:grid-cols-2 md:grid md:gap-6 ">
       {results.map((char) => {
         return (
+          <div className="flex flex-row justify-start pt-4 ml-4 mr-4 items-center bg-transparent gap-4 sm:h-full sm:grid-cols-2 sm:grid-rows-none" key={char.id}>
           <Link to={`/character/${char.id}`}> 
-          <div className="flex flex-row justify-center pt-4 ml-4 mr-4 items-center bg-transparent gap-4 sm:h-full sm:grid-cols-2 sm:grid-rows-none" key={char.id}>
-            
-            <div className="w-16 h-16 self-start rounded-full bg-white relative">
-              
+            <div className="mr-4 w-12 h-12 self-start rounded-full bg-white relative sm:w-16 sm:h-16 sm:mr-0">
               <img src={char.image} className="w-full h-full object-cover rounded-full sm:rounded-full" alt="avatar" />
-              
-              <div className={`border-white border-solid border-2 absolute top-0 left-12 h-4 w-4 rounded-full ${getStatus(char.status)}`}>
+              <div className={`border-white absolute border-solid border-2  top-0 left-9 h-3 w-3 rounded-full ${getStatus(char.status)} sm:top-0 sm:left-12 h-4 w-4`}>
               </div>
             </div>
-            <div className="w-screen grid auto-cols-auto h-full content-around text-left ml-2 text-lg capitalize text-black pl-4">
+            </Link>
+            <div className=" grid auto-cols-auto h-full pl-0 ml-0 content-start text-left sm:text-left text-lg capitalize text-black sm:w-screen sm:pl-4 sm:ml-2">
+            <Link to={`/character/${char.id}`}> 
               <h2 className="text-3xl hover:text-yellow-600">
                 {char.name}
               </h2>
+              </Link>
         <p className="text-base text-gray-500 hover:text-purple-500">{`Gender: ${char.gender} `}</p>
             </div>
             </div>
-            </Link>
         );
       })}
     </section>

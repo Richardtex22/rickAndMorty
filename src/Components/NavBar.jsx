@@ -28,7 +28,6 @@ const NavBar = () => {
                   )}
             </button>
           </div>
-
           <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
             <div className="flex-shrink-0 flex items-center">
               <img className="block lg:hidden h-8 w-auto rounded-3xl" src="https://png.pngitem.com/pimgs/s/515-5152607_freetoedit-cute-rick-morty-rickandmorty-wallpaper-black-and.png" alt="Workflow" />
@@ -49,7 +48,7 @@ const NavBar = () => {
 
         </div>
       </div>
-      {!!(!isClicked) && (
+      {!!(isClicked) && (
         <div className="sm:hidden" id="mobile-menu">
           <div className="px-2 pt-2 pb-3 space-y-1">
             <Link to="/Home">
