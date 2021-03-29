@@ -51,10 +51,10 @@ const Characters = () => {
           </div>
         </div>
       </section>
-    <section className="bg-white w-screen p-2 sm:p-16 justify-items-start gap-8 md:grid-cols-2 md:grid md:gap-6 ">
+    <section className="bg-white w-screen p-4 sm:p-8 justify-items-start gap-8 md:grid-cols-2 md:grid md:gap-6 ">
       {results.map((char) => {
         return (
-          <div className="flex flex-row justify-start pt-4 ml-4 mr-4 items-center bg-transparent gap-4 sm:h-full sm:grid-cols-2 sm:grid-rows-none" key={char.id}>
+          <div className="flex flex-row justify-start pt-4 ml-4 mr-4 items-start bg-transparent gap-4 sm:h-full sm:grid-cols-2 sm:grid-rows-none" key={char.id}>
           <Link to={`/character/${char.id}`}> 
             <div className="mr-4 w-12 h-12 self-start rounded-full bg-white relative sm:w-16 sm:h-16 sm:mr-0">
               <img src={char.image} className="w-full h-full object-cover rounded-full sm:rounded-full" alt="avatar" />
@@ -62,7 +62,7 @@ const Characters = () => {
               </div>
             </div>
             </Link>
-            <div className=" grid auto-cols-auto h-full pl-0 ml-0 content-start text-left sm:text-left text-lg capitalize text-black sm:w-screen sm:pl-4 sm:ml-2">
+            <div className=" grid auto-cols-auto h-full pl-0 ml-0 content-start text-left sm:text-left text-lg capitalize text-black sm:w-full sm:pl-4 sm:ml-2">
             <Link to={`/character/${char.id}`}> 
               <h2 className="text-3xl hover:text-yellow-600">
                 {char.name}
