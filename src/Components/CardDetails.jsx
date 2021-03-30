@@ -1,7 +1,7 @@
 import React from 'react';
 
 const CardDetails = ({data}) => {
-    const {id: charId, name, type, status, species, image, location: {name: locName} } = data;
+    const { name, status, species, image, location: {name: locName} } = data;
     const getStatus = (status) => {
         let color = "text-green-400";
         if(status === "Dead") {
@@ -13,14 +13,15 @@ const CardDetails = ({data}) => {
         return color;
       };
     return (
-    <div className="m-8 flex-col sm:w-full sm:h-92 flex sm:flex-row content-around border-gray-100 border-solid">
-        <div className="mb-8 w-full sm:w-72 h-auto rounded-lg sm:mr-4 transition duration-500 ease-in-out opacity-90 hover:opacity-100 transform hover:-translate-y-1 hover:scale-110">
-            <img className="w-auto h-auto rounded-lg" src={image} alt="Character image"/>
+    <div className="m-8 flex-col sm:w-full sm:h-92 flex sm:flex-row content-around border-gray-100 border-sopd">
+        <div className="mb-8 w-full h-auto rounded-lg sm:m-4 sm:w-72 transition duration-500 ease-in-out opacity-90 hover:opacity-100 transform hover:-translate-y-1 hover:scale-110">
+            <img className="w-auto h-auto rounded-lg" src={image} alt="Character"/>
         </div>
-        <div className="px-2 gap-6 w-full sm:w-1/2 sm:p-4 text-left text-lg text-white grid grid-cols-auto content-between">
-            <p>{`Alias: ${name}`}</p>
+        <div className="px-2 gap-6 w-full sm:w-1/2 sm:p-4 text-left text-lg text-white grid grid-cols-1 content-between">
+            <p>{`Apas: ${name}`}</p>
             <p>Status: <span className={getStatus(status)}>{status}</span></p>
             <p>{`Last location known: ${locName}`}</p>
+            <p>{`Specie: ${species}`}</p>
         </div>
     </div>
     );
