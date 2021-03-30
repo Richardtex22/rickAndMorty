@@ -11,8 +11,8 @@ import "./App.css";
 export default function App() {
   return (
     <Router>
-    <div className="App overflow-hidden">
-      <NavBar></NavBar>
+    <div className="App">
+      <NavBar />
       <Switch>
         <Route path="/" exact component={Home}></Route>
         <Route path="/Home" component={Home}></Route>

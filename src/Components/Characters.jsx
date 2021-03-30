@@ -4,8 +4,6 @@ import { useQuery } from "@apollo/client";
 import {Link} from 'react-router-dom';
 import Loading from "./Loading";
 
-
-
 const Characters = () => {
   const [page, setPage] = useState(1);
   const {loading, data, error, refetch} = useQuery(charsQuery,
@@ -33,7 +31,7 @@ const Characters = () => {
    return (
     <main className="text-center">
     <section className="Hero-image bg-center bg-no-repeat bg-cover relative">
-        <div className="w-146 text-center absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white">
+        <div className="w-3/4 text-center absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white">
           <h1 className="text-5xl mb-8">Rick | Morty</h1>
           <div className="flex flex-col items-center justify-center w-full md:flex-row md:items-baseline">
           {page > 1 ? 
