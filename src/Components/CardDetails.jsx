@@ -34,10 +34,10 @@ const CardDetails = ({data}) => {
             textColor = "599441";
         }
         if(species === speciesArray.HUMANOID){
-            textColor = "1e505f";
+            textColor = "4bbef3";
         }
         if(species === speciesArray.MYTH){
-            textColor = "1e505f";
+            textColor = "ffaa00";
         }
 
         const bgColor = "#" + textColor;

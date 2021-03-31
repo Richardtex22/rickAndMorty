@@ -6,16 +6,27 @@ import Loading from "./Loading";
 
 const Characters = () => {
   const [page, setPage] = useState(1);
+  const [nameFilter, setNameFilter] = useState("");
+  const [input,setInput] = useState("");
   const {loading, data, error, refetch} = useQuery(charsQuery,
     {
-      variables: {page},
+      variables: {page, filter: {name: nameFilter}},
     });
 
   if (error) {
-      return <h2 className="text-5xl">Houston we have problems</h2>;
+      return (
+        <div className="flex flex-col items-center max-w-4xl mx-auto mt-14 mb-6">
+          <h2 className="justify-center m-12 text-5xl text-center">Houston we have problems, try reloading the page.</h2>
+          <button 
+            className="font-mono text-lg mb-4 h-12 w-48 py-0 px-6 text-center mx-4 text-white bg-gray-500 rounded-lg" 
+            onClick={() => window.location.reload()}>
+            Reload
+          </button>
+        </div>
+      );
     }
     if (loading) return <Loading />;
-  const { results } = data.characters || [];
+  const { results, info: {pages: totalPages}, errors } = data.characters || [];
 
     const getStatus = (status) => {
       let color = "bg-green-400";
@@ -28,7 +39,12 @@ const Characters = () => {
       return color;
     };
 
-   return (
+  const getFilterChar = (filter) => {
+    console.log("input: ",filter);
+    setNameFilter(filter);
+  }
+
+  return (
     <main className="text-center">
     <section className="Hero-image bg-center bg-no-repeat bg-cover relative">
         <div className="w-3/4 text-center absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white">
@@ -45,11 +61,15 @@ const Characters = () => {
                : null
           }
           <p className="text-base mx-8 pb-4">Render a list of Rick & Morty characters</p>
-          <button id="nextBtn" className="font-mono text-base mb-4 h-12 py-0 px-6 text-center mx-4 text-black bg-white rounded-lg border border-white border-solid md:mb-0" onClick={() => refetch({variables: setPage(page+1)})}>Next Page</button>
+          {totalPages > 1 && page < totalPages && <button id="nextBtn" className="font-mono text-base mb-4 h-12 py-0 px-6 text-center mx-4 text-black bg-white rounded-lg border border-white border-solid md:mb-0" onClick={() => refetch({variables: setPage(page+1)})}>Next Page</button>}
           </div>
         </div>
       </section>
-    <section className="bg-white w-screen p-4 sm:p-8 justify-items-start gap-8 md:grid-cols-2 md:grid md:gap-6 ">
+      <section className="flex items-center max-w-4xl mx-auto mt-14 mb-6 justify-center">
+      <input placeholder="Search for a character..." className="w-3/4 p-3 border-solid border-2 border-gray-500 rounded-md" onKeyUp={(e) => setInput(e.target.value)}></input>
+      <button className="w-1/4 font-mono text-base mb-4 h-12 py-0 px-6 text-center mx-4 text-white bg-gray-500 rounded-lg md:mb-0" onClick={() => getFilterChar(input)}>Search</button>
+      </section>
+    <section className="bg-white w-screen p-4 sm:p-8 justify-items-start gap-8 md:grid-cols-2 md:grid md:gap-6">
       {results.map((char) => {
         return (
           <div className="flex flex-row justify-start pt-4 ml-4 mr-4 items-start bg-transparent gap-4 sm:h-full sm:grid-cols-2 sm:grid-rows-none" key={char.id}>
