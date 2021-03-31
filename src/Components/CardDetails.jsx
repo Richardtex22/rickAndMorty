@@ -5,6 +5,9 @@ const speciesArray = {
     HUMANOID: "Humanoid",
     ALIEN: "Alien",
     MYTH: "Mythological Creature",
+    ANIMAL: "Animal",
+    DISEASE: "Disease",
+    ROBOT: "Robot",
 } 
 
 const CardDetails = ({data}) => {
@@ -39,7 +42,15 @@ const CardDetails = ({data}) => {
         if(species === speciesArray.MYTH){
             textColor = "ffaa00";
         }
-
+        if(species === speciesArray.ROBOT){
+            textColor = "aea299";
+        }
+        if(species === speciesArray.ANIMAL){
+            textColor = "fdff00";
+        }
+        if(species === speciesArray.DISEASE){
+            textColor = "db28fd";
+        }
         const bgColor = "#" + textColor;
         const style = {color: bgColor};
         return style;
