@@ -22,8 +22,8 @@ const Chars = ({ match }) => {
     if (loading) return <Loading />;
 
     return (
-        <section className="bg-fixed h-screen w-full bg-darkGray relative">
-            <div className="w-full bg-center h-screen absolute  text-white left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2">
+        <section className="bg-fixed h-146 w-full bg-darkGray relative">
+            <div className="w-full bg-center h-146 absolute  text-white left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2">
                 <div className="flex m-8 sm:my-4 sm:ml-12">
                     <Link to="/Characters">
                         <button className="flex justify-around items-center hover:border-white">

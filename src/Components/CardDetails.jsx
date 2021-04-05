@@ -56,7 +56,7 @@ const CardDetails = ({data}) => {
         return style;
     }
     return (
-    <div className="m-8 flex-col sm:w-full sm:h-92 flex sm:flex-row content-around border-gray-100 border-sopd">
+    <div className="mx-8 mt-8 mb-12 min-h-screen flex-col sm:w-full sm:h-92 flex sm:flex-row content-around border-gray-100 border-solid">
         <div className="self-center mb-8 w-5/6 h-auto rounded-lg sm:m-4 sm:w-72 overflow-hidden">
             <img className="w-full h-auto rounded-lg transition duration-500 ease-in-out opacity-90 hover:opacity-100 transform hover:-translate-y-1 hover:scale-110" src={image} alt="Character"/>
         </div>
