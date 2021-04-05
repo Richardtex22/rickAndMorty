@@ -56,11 +56,11 @@ const CardDetails = ({data}) => {
         return style;
     }
     return (
-    <div className="mx-8 mt-8 mb-12 min-h-screen flex-col sm:w-full sm:h-92 flex sm:flex-row content-around border-gray-100 border-solid">
-        <div className="self-center mb-8 w-5/6 h-auto rounded-lg sm:m-4 sm:w-72 overflow-hidden">
+    <div className="mx-8 mt-8 mb-12 flex-col sm:w-full sm:h-92 flex sm:flex-row content-around border-gray-100 border-solid">
+        <div className="self-center mb-8 w-11/12 h-auto rounded-lg sm:m-4 sm:w-72 overflow-hidden">
             <img className="w-full h-auto rounded-lg transition duration-500 ease-in-out opacity-90 hover:opacity-100 transform hover:-translate-y-1 hover:scale-110" src={image} alt="Character"/>
         </div>
-        <div className="px-8 gap-6 w-full sm:w-1/2 sm:p-4 text-left text-lg text-white grid grid-cols-1 content-between">
+        <div className="px-4 gap-6 w-full sm:w-1/2 sm:p-4 text-left text-lg text-white grid grid-cols-1 content-between">
             <p>{`Alias: ${name}`}</p>
             <p>Status: <span className={getStatus(status)}>{status}</span></p>
             <p>{`Last location known: ${locName}`}</p>
