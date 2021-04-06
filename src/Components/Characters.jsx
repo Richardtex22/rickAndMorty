@@ -80,7 +80,7 @@ const Characters = () => {
             <div className="flex flex-row justify-start pt-4 ml-4 mr-4 items-start bg-transparent gap-4 sm:h-full sm:grid-cols-2 sm:grid-rows-none" key={char.id}>
               <Link to={`/character/${char.id}`}>
                 <div className="mr-4 w-12 h-12 self-start rounded-full bg-white relative sm:w-16 sm:h-16 sm:mr-0">
-                  <img src={char.image} className="w-full h-full object-cover rounded-full opacity-50 hover:opacity-100 sm:rounded-full" alt="avatar" />
+                  <img src={char.image} className="w-full h-full object-cover rounded-full opacity-50 hover:opacity-100 transform hover:-translate-y-1 hover:scale-110 sm:rounded-full" alt="avatar" />
                   <div className={`border-white absolute border-solid border-2  top-0 left-9 h-3 w-3 rounded-full ${getStatus(char.status)} sm:top-0 sm:left-12 h-4 w-4`}>
                   </div>
                 </div>
