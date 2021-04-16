@@ -26,7 +26,7 @@ const Characters = () => {
     );
   }
   if (loading) return <Loading />;
-  const { results, info: { pages: totalPages }, errors } = data.characters || [];
+  const { results, info: { pages: totalPages } } = data.characters || [];
 
   const getStatus = (status) => {
     let color = "bg-green-400";
@@ -40,41 +40,61 @@ const Characters = () => {
   };
 
   const getFilterChar = (filter) => {
-    console.log("input: ", filter);
     setNameFilter(filter);
   }
-
+  const btnStyle = {
+    fontSize: '1rem',
+    lineHeight: '1.5rem',
+    textAlign: 'center',
+    color: 'white',
+    backgroundColor: 'rgba(107, 114, 128, 1)',
+    height: '3rem',
+    paddingTop: '0rem',
+    fontFamily: 'ui-monospace',
+    paddingLeft: '1.5rem',
+    paddingRight: '1.5rem',
+    borderRadius: '.5rem',
+  }
   return (
     <main className="text-center">
       <section className="Hero-image bg-center bg-no-repeat bg-cover relative">
-        <div className="w-3/4 text-center absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white">
+        <div className="w-full md:w-3/4 text-center absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white">
           <h1 className="text-5xl mb-8">Rick | Morty</h1>
-          <div className="flex flex-col items-center justify-center w-full md:flex-row md:items-baseline">
-            {page > 1 ?
-              (
-                <button id="prevBtn" className="font-mono mb-4 text-base h-12 py-0 px-6 text-center mx-4 text-black bg-white rounded-lg border border-white border-solid md:mb-0"
-                  onClick={() => refetch({ variables: setPage(page - 1) })}
-                >
-                  Previous Page
-                </button>
-              )
-              : null
-            }
-            <p className="text-base mx-8 pb-4">Render a list of Rick & Morty characters</p>
-            {totalPages > 1 && page < totalPages &&
-              <button id="nextBtn"
-                className="font-mono text-base mb-4 h-12 py-0 px-6 text-center mx-4 text-black bg-white rounded-lg border border-white border-solid md:mb-0"
-                onClick={() => refetch({ variables: setPage(page + 1) })}>Next Page
-            </button>
-            }
-          </div>
+          <p className="text-base mx-8 pb-8">Render a list of Rick & Morty characters</p>
         </div>
       </section>
-      <section className="flex items-center max-w-4xl mx-4 md:mx-auto mt-14 mb-6 justify-center">
-        <input placeholder="Search for a character..." className="w-2/3 md:w-3/4 p-3 border-solid border-2 border-gray-500 rounded-md" onKeyUp={(e) => setInput(e.target.value)}></input>
-        <button className="w-1/3 md:w-1/4 font-mono text-base h-12 ml-4 py-0 px-6 text-center md:mx-4 text-white bg-gray-500 rounded-lg md:mb-0" onClick={() => getFilterChar(input)}>Search</button>
+      <section className="flex flex-col items-center max-w-5xl mx-4 md:mx-auto mt-14 mb-6 justify-between">
+        <div className="w-3/4 flex flex-row pb-8">
+          <input placeholder="Search for a character..." className="w-2/3 md:w-3/4 p-3 border-solid border-2 border-gray-500 rounded-md" onKeyUp={(e) => setInput(e.target.value)}></input>
+          <button className="font-mono w-1/3 md:w-1/4 ml-4 md:mb-0 hover:bg-white hover:text-gray-500 hover:border-gray-500 border text-base h-12 py-0 px-6 text-center text-white bg-gray-500 rounded-lg" onClick={() => getFilterChar(input)}>Search</button>
+        </div>
+        <div className="w-3/4 flex justify-between">
+          {page > 1 ?
+            (
+              <button
+                id="prevBtn"
+                className="flex items-center mb-4 border border-solid md:mb-0 hover:bg-white hover:text-gray-500 hover:border-gray-500 text-base h-12 py-0 px-6 text-center text-white bg-gray-500 rounded-lg"
+                onClick={() => refetch({ variables: setPage(page - 1) })}
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                </svg>
+                Previous Page
+              </button>
+            )
+            : null
+          }
+          {totalPages > 1 && page < totalPages &&
+            <button id="nextBtn"
+              className="mb-4 border-white items-center border-solid md:mb-0 hover:bg-white hover:text-gray-500 hover:border-gray-500 border text-base h-12 py-0 px-6 text-center text-white bg-gray-500 rounded-lg flex"
+              onClick={() => refetch({ variables: setPage(page + 1) })}>Next Page
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </button>}
+        </div>
       </section>
-      <section className="bg-white w-screen p-4 sm:p-8 justify-items-start gap-8 md:grid-cols-2 md:grid md:gap-6">
+      <section className="bg-white max-w-7xl py-4 sm:p-4 justify-items-start gap-8 md:grid-cols-2 lg:grid-cols-3 md:grid md:gap-6 md:mx-auto">
         {results.map((char) => {
           return (
             <div className="flex flex-row justify-start pt-4 ml-4 mr-4 items-start bg-transparent gap-4 sm:h-full sm:grid-cols-2 sm:grid-rows-none" key={char.id}>
