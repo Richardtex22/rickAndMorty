@@ -94,7 +94,7 @@ const Characters = () => {
             </button>}
         </div>
       </section>
-      <section className="bg-white max-w-7xl py-4 sm:p-4 justify-items-start gap-8 md:grid-cols-2 lg:grid-cols-3 md:grid md:gap-6 md:mx-auto">
+      <section className="bg-white max-w-7xl pb-4 sm:p-4 justify-items-start gap-8 md:grid-cols-2 lg:grid-cols-3 md:grid md:gap-6 md:mx-auto">
         {results.map((char) => {
           return (
             <div className="flex flex-row justify-start pt-4 ml-4 mr-4 items-start bg-transparent gap-4 sm:h-full sm:grid-cols-2 sm:grid-rows-none" key={char.id}>
