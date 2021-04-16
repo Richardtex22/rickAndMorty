@@ -18,7 +18,7 @@ const Characters = () => {
       <div className="flex flex-col items-center max-w-4xl mx-auto mt-14 mb-6">
         <h2 className="justify-center m-12 text-5xl text-center">Houston we have problems, try reloading the page.</h2>
         <button
-          className="font-mono text-lg mb-4 h-12 w-48 py-0 px-6 text-center mx-4 text-white bg-gray-500 rounded-lg"
+          className="focus:outline-none font-mono text-lg mb-4 h-12 w-48 py-0 px-6 text-center mx-4 text-white bg-gray-500 rounded-lg"
           onClick={() => window.location.reload()}>
           Reload
           </button>
@@ -64,16 +64,16 @@ const Characters = () => {
         </div>
       </section>
       <section className="flex flex-col items-center max-w-5xl mx-4 md:mx-auto mt-14 mb-6 justify-between">
-        <div className="w-3/4 flex flex-row pb-8">
+        <div className="w-full md:w-3/4 flex flex-row pb-8">
           <input placeholder="Search for a character..." className="w-2/3 md:w-3/4 p-3 border-solid border-2 border-gray-500 rounded-md" onKeyUp={(e) => setInput(e.target.value)}></input>
-          <button className="font-mono w-1/3 md:w-1/4 ml-4 md:mb-0 hover:bg-white hover:text-gray-500 hover:border-gray-500 border text-base h-12 py-0 px-6 text-center text-white bg-gray-500 rounded-lg" onClick={() => getFilterChar(input)}>Search</button>
+          <button className="focus:outline-none font-mono w-1/3 md:w-1/4 ml-4 md:mb-0 hover:bg-white hover:text-gray-500 hover:border-gray-500 border text-base h-12 py-0 px-6 text-center text-white bg-gray-500 rounded-lg" onClick={() => getFilterChar(input)}>Search</button>
         </div>
-        <div className="w-3/4 flex justify-between">
+        <div className="w-full md:w-3/4 flex justify-evenly">
           {page > 1 ?
             (
               <button
                 id="prevBtn"
-                className="flex items-center mb-4 border border-solid md:mb-0 hover:bg-white hover:text-gray-500 hover:border-gray-500 text-base h-12 py-0 px-6 text-center text-white bg-gray-500 rounded-lg"
+                className="focus:outline-none outline-none flex items-center mb-4 border border-solid md:mb-0 hover:bg-white hover:text-gray-500 hover:border-gray-500 text-base h-12 py-0 px-6 text-center text-white bg-gray-500 rounded-lg"
                 onClick={() => refetch({ variables: setPage(page - 1) })}
               >
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -86,7 +86,7 @@ const Characters = () => {
           }
           {totalPages > 1 && page < totalPages &&
             <button id="nextBtn"
-              className="mb-4 border-white items-center border-solid md:mb-0 hover:bg-white hover:text-gray-500 hover:border-gray-500 border text-base h-12 py-0 px-6 text-center text-white bg-gray-500 rounded-lg flex"
+              className="focus:outline-none mb-4 border-white items-center border-solid md:mb-0 hover:bg-white hover:text-gray-500 hover:border-gray-500 border text-base h-12 py-0 px-6 text-center text-white bg-gray-500 rounded-lg flex"
               onClick={() => refetch({ variables: setPage(page + 1) })}>Next Page
               <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
